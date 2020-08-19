@@ -1,31 +1,36 @@
-import React from "react";
+import React, {useState} from "react";
 
-type UncontrolledAccordeonPropsType = {
+type UncontrolledAccordionPropsType = {
     title: string
-    collapsed: boolean
+    //collapsed: boolean
 }
 
-export function UncontrolledAccordeon(props: UncontrolledAccordeonPropsType) {
+export function UncontrolledAccordion(props: UncontrolledAccordionPropsType) {
+    let [collapsed, setCollapsed] = useState(true)
+    let collapsedChange = () => {
+        setCollapsed(!collapsed)
+    }
 
     return (
         <div>
-            <AccordeonTitle title={props.title}/>
-            {!props.collapsed && <AccordeonBody/>}
+            <AccordionTitle title={props.title} collapsedChange={collapsedChange}/>
+            {!collapsed && <AccordionBody/>}
         </div>)
 
 }
 
-type AccordeonTitlePropsType = {
+type AccordionTitlePropsType = {
     title: string
+    collapsedChange: () => void
 }
 
-function AccordeonTitle(props: AccordeonTitlePropsType) {
+function AccordionTitle(props: AccordionTitlePropsType) {
     return (
-        <h3>{props.title}</h3>
+        <h3 onClick={props.collapsedChange}>{props.title}</h3>
     );
 }
 
-function AccordeonBody() {
+function AccordionBody() {
     return (
         <ul>
             <li>1</li>
