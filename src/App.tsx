@@ -19,7 +19,7 @@ function App() {
             <Accordion title={"Menu"} collapsed={accordionCollapsed} setAccordionCollapsed={setAccordionCollapsed}/>
             <OnOff on={on} setOn={setOn}/>
             <UncontrolledAccordion title={"Menu2"}/>
-            <UncontrolledRating/>
+            {/*<UncontrolledRating/>*/}
             <UncontrolledOnOff onChange={setOn}/>{on.toString()}
         </div>
     );
