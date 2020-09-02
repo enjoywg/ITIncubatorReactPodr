@@ -16,7 +16,9 @@ function App() {
         <div className={"App"}>
             <PageTitle title="This is App"/>
             <Rating ratingValue={ratingValue} setRatingValue={setRatingValue}/>
-            <Accordion title={"Menu"} collapsed={accordionCollapsed} setAccordionCollapsed={setAccordionCollapsed}/>
+            <Accordion title={"Users"} collapsed={accordionCollapsed} setAccordionCollapsed={setAccordionCollapsed}
+                       onClick={()=>{}}
+                       items={[{title: "Igor", value: 1}, {title: "Valera", value: 2}, {title: "Sveta", value: 3},]}/>
             <OnOff on={on} setOn={setOn}/>
             <UncontrolledAccordion title={"Menu2"}/>
             {/*<UncontrolledRating/>*/}
